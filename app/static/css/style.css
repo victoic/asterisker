@@ -1,0 +1,31 @@
+a.navbar-brand {
+  color: #ffffff !important;
+}
+
+a.navbar-brand small {
+  font-size: 0.5em;
+  margin-left: 5;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-family: Lato;
+  color: #5e6566 !important;
+  font-size: 2em;
+}
+
+.half-round {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.margin-top {
+  margin-top: 3;
+}

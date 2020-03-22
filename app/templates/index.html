@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--load all styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+    <link href="{{ url_for('static', filename='css/all.min.css') }}" rel="stylesheet">
+
+    <title>Asterisk*r</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+      <a class="navbar-brand" href="#"><i class='fas fa-asterisk'></i>Asterisk*r </a><a class="navbar-brand" href="https://github.com/victoic"><small>por <strong>Victor Lundgren</strong></small></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    <div class="container">
+      <div class="row vertical-center">
+        <div class="col col-sm-8 offset-sm-2">
+          <form name="asteriker">
+            <div class="form-group row">
+              <div class="col-12 text-center">
+                <label for="input_text" class="col-form-label-lg" for="input_text"><h1>Aster<i class='fas fa-asterisk'></i>sk It</h1></label>
+              </div>
+              <textarea> type="text" class="form-control form-control-lg" id="input_text" aria-describedby="textHelp"></textarea>
+              <small id="textHelp" class="form-text text-muted">Type your text to transform it.</small>
+            </div>
+            <div class="col-sm-8 offset-sm-2 text-center">
+              <button type="button" onclick="asterisker();" class="btn btn-lg btn-info">Transform</button>
+            </div>
+          </form>
+
+          <form class="form-inline mt-5" id="asterisked-info" style="visibility: hidden;">
+            <div class="col-sm-11 col-sm-8">
+              <textarea> type="text" readonly class="form-control-plaintext" id="asterisked" name="asterisked"></textarea>
+            </div>
+            <div class="col-lg-1 col-sm-4">
+              <button type="button" class="btn btn-lg btn-info my-1 half-round" id="copy-button" onclick="copyText();" data-container="body" data-toggle="popover" data-placement="top" data-content="Copied."><i class="fas fa-clipboard"></i>Copy</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <script src="{{ url_for('static', filename='js/asterisker.js') }}"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
