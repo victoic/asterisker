@@ -1,6 +1,6 @@
 function asterisker(){
   string = document.getElementById('input_text').value
-  keep_string = " \n!@#$%¨&*()¹²³£¢¬´`{[ª~^]}º,<.>;:/?°\|1234567890-_=+§"
+  keep_string = " \n!@#$%¨&*()¹²³£¢¬´`{[ª~^]}º,<.>;:/?°\\|1234567890-_=+§"
   for (var i = 0; i < string.length; i++){
     char = string.charAt(i)
     if (keep_string.indexOf(char) < 0){
