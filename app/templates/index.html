@@ -30,7 +30,12 @@
                 <label for="input_text" class="col-form-label-lg" for="input_text"><h1>Aster<i class='fas fa-asterisk'></i>sk It</h1></label>
               </div>
               <textarea onkeyup="asterisker()" type="text" class="form-control form-control-lg" id="input_text" aria-describedby="textHelp"></textarea>
-              <small id="textHelp" class="form-text text-muted">Type your text to transform it.</small>
+              <div class="col-6">
+                  <small id="textHelp" class="form-text text-muted">Type your text to transform it.</small>
+                </div>
+              <div class="col-6">
+                  <small id="tweetCounter" class="form-text text-muted text-right">Twitter limit: 0/267</small>
+              </div>
             </div>
             <div class="col-sm-8 offset-sm-2 text-center">
               <button type="button" onclick="asterisker();" class="btn btn-lg btn-info">Transform</button>
@@ -38,16 +43,23 @@
           </form>
         </div>
         <div class="col-12 col-md-8 offset-md-2">
-          <form class="form-inline mt-5" id="asterisked-info" style="visibility: hidden;">
-            <div class="col-md-10 col-8">
+          <form class="form-inline mt-2" id="asterisked-info" style="visibility: hidden;">
+            <div class="col-md-8 col-5">
               <textarea type="text" readonly class="form-control-plaintext" id="asterisked" name="asterisked"></textarea>
             </div>
-            <div class="col-md-2 col-4">
-              <button type="button" class="btn btn-lg btn-info my-1 half-round" id="copy-button" onclick="copyText();" data-container="body" data-toggle="popover" data-placement="top" data-content="Copied."><i class="fas fa-clipboard"></i>Copy</button>
+            <div class="col-md-4 col-7 btn-group" role="group" aria-label="Use text button group.">
+              <button type="button" class="btn btn-lg btn-info my-1 squared" id="copy-button" onclick="copyText();" data-container="body" data-toggle="popover" data-placement="top" data-content="Copied."><i class="fas fa-copy"></i>Copy</button>
+              <a href="https://twitter.com/intent/tweet?button_hashtag=asterisker&ref_src=twsrc%5Etfw" class="btn btn-lg btn-info half-round my-1" id="tweet_btn" class="twitter-hashtag-button" data-lang="pt" data-show-count="false"><i class="fab fa-twitter"></i>Tweet</a>
             </div>
-          </form>
         </div>
-      </div>
+        <div class="col-12 col-md-6 offset-md-3 d-none d-md-block">
+          <script type="text/javascript" src="//uprimp.com/bnr.php?section=General&pub=388153&format=468x60&ga=g&bg=2"></script>
+          <noscript><a href="https://yllix.com/publishers/388153" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/468x60.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" alt="ylliX - Online Advertising Network" /></a></noscript>
+        </div>
+        <div class="col-12 col-md-6 offset-md-3 d-block d-md-none"> 
+          <script type="text/javascript" src="//uprimp.com/bnr.php?section=General&pub=388153&format=300x50&ga=g&bg=2"></script>
+          <noscript><a href="https://yllix.com/publishers/388153" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub_2hpya3.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" alt="ylliX - Online Advertising Network" /></a></noscript>
+        </div>
     </div>
     <!-- Optional JavaScript -->
     <script src="{{ url_for('static', filename='js/asterisker.js') }}"></script>
