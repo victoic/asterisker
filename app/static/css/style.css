@@ -1,4 +1,4 @@
-a.navbar-brand {
+a.navbar-brand, a.nav-item {
   color: #ffffff !important;
 }
 
@@ -15,10 +15,19 @@ a.navbar-brand small {
   align-items: center;
 }
 
-h1 {
+h2{
   font-family: Lato;
+  font-size: 1.6em;
   color: #5e6566 !important;
-  font-size: 2em;
+}
+
+h1 {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+.header1-color{
+  color: #5e6566 !important;
 }
 
 .half-round {

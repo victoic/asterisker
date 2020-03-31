@@ -12,11 +12,20 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
     <link href="{{ url_for('static', filename='css/all.min.css') }}" rel="stylesheet">
 
-    <title>Asterisk*r</title>
+    <title>Asterisker</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-info">
-      <a class="navbar-brand" href="#"><i class='fas fa-asterisk'></i>Asterisk*r </a><a class="navbar-brand" href="https://github.com/victoic"><small>por <strong>Victor Lundgren</strong></small></a>
+      <a class="navbar-brand" href="#">
+        <h1><i class='fas fa-asterisk'></i>Asterisker</h1>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="navbar-brand" href="https://github.com/victoic">
+            <small>por <strong>Victor Lundgren</strong></small>
+          </a>
+        </div>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,19 +35,31 @@
         <div class="col-12 col-md-8 offset-md-2">
           <form name="asteriker">
             <div class="form-group row">
-              <div class="col-12 text-center">
-                <label for="input_text" class="col-form-label-lg" for="input_text"><h1>Aster<i class='fas fa-asterisk'></i>sk It</h1></label>
+              <div class="col-12 text-center" aria-describedby="collapseInfo">
+                <label for="input_text" class="col-form-label-lg">
+                  <h2>Aster<i class='fas fa-asterisk'></i>sca Isso</h2>
+                </label>
+                <small>
+                  <a data-toggle="collapse" href="#collapseInfo" role="button" aria-expanded="false" aria-controls="collapseInfo" class="text-decoration-none badge badge-info rounded-pill">O que é isso?</a>
+                </small>
+              </div>
+              <div class="collapse" aria-hidden="true" id="collapseInfo">
+                <div class="card card-body border-0 header1-color">
+                  <p>Asteriker é a ferramenta web que transforma palavras em asteríscos. Agora você poder colocar todos os seus segredos no Twitter sem precisar contar letras! Caractéres especiais, como <i>!, @ ou :</i> não são transformados, nem números (1, 2, 3). Entendeu?</p>
+                  <p>********* * * ********** *** *** ********** ******** ** **********. ***** **** ***** ******* ***** ** **** ******** ** ******* *** ******** ****** ******! ********** *********, **** <i>!, @ ** :</i> *** *** *************, *** ******* (1, 2, 3). ********?</p>
+                </div>
               </div>
               <textarea onkeyup="asterisker()" type="text" class="form-control form-control-lg" id="input_text" aria-describedby="textHelp"></textarea>
               <div class="col-6">
-                  <small id="textHelp" class="form-text text-muted">Type your text to transform it.</small>
+                  <small id="textHelp" class="form-text text-muted">Digite seu texto para transformá-lo em *.</small>
                 </div>
               <div class="col-6">
-                  <small id="tweetCounter" class="form-text text-muted text-right">Twitter limit: 0/267</small>
+                  <small id="tweetCounter" class="form-text text-muted text-right">Limite do Twitter: 0/267</small>
               </div>
             </div>
-            <div class="col-sm-8 offset-sm-2 text-center">
-              <button type="button" onclick="asterisker();" class="btn btn-lg btn-info">Transform</button>
+            <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 text-center btn-group" role="group" aria-label="Transform text button group." >
+              <button type="button" onclick="asterisker();" class="btn btn-lg btn-info"><i class="fas fa-random"></i> Transformar</button>
+              <button type="button" onclick="reset();" class="btn btn-lg btn-secondary" id="reset-button"><i class="fas fa-undo"></i> Resetar</button>
             </div>
           </form>
         </div>
@@ -48,17 +69,16 @@
               <textarea type="text" readonly class="form-control-plaintext" id="asterisked" name="asterisked"></textarea>
             </div>
             <div class="col-md-4 col-7 btn-group" role="group" aria-label="Use text button group.">
-              <button type="button" class="btn btn-lg btn-info my-1 squared" id="copy-button" onclick="copyText();" data-container="body" data-toggle="popover" data-placement="top" data-content="Copied."><i class="fas fa-copy"></i>Copy</button>
-              <a href="https://twitter.com/intent/tweet?button_hashtag=asterisker&ref_src=twsrc%5Etfw" class="btn btn-lg btn-info half-round my-1" id="tweet_btn" class="twitter-hashtag-button" data-lang="pt" data-show-count="false"><i class="fab fa-twitter"></i>Tweet</a>
+              <button type="button" class="btn btn-lg btn-info my-1 squared" id="copy-button" onclick="copyText();" data-container="body" data-toggle="popover" data-placement="top" data-content="Copied."><i class="fas fa-copy"></i> Copiar</button>
+              <a href="https://twitter.com/intent/tweet?button_hashtag=asterisker&ref_src=twsrc%5Etfw" class="btn btn-lg btn-info half-round my-1" id="tweet_btn" name="tweetButton" data-lang="pt" data-show-count="false"><i class="fab fa-twitter"></i> Tweetar</a>
             </div>
+          </form>
         </div>
         <div class="col-12 col-md-6 offset-md-3 d-none d-md-block">
-          <script type="text/javascript" src="//uprimp.com/bnr.php?section=General&pub=388153&format=468x60&ga=g&bg=2"></script>
-          <noscript><a href="https://yllix.com/publishers/388153" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/468x60.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" alt="ylliX - Online Advertising Network" /></a></noscript>
+
         </div>
         <div class="col-12 col-md-6 offset-md-3 d-block d-md-none"> 
-          <script type="text/javascript" src="//uprimp.com/bnr.php?section=General&pub=388153&format=300x50&ga=g&bg=2"></script>
-          <noscript><a href="https://yllix.com/publishers/388153" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub_2hpya3.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" alt="ylliX - Online Advertising Network" /></a></noscript>
+
         </div>
     </div>
     <!-- Optional JavaScript -->

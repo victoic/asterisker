@@ -45,11 +45,24 @@ function asterisker(){
   document.getElementById('asterisked').value = string
   document.getElementById('asterisked-info').style.visibility='visible'
 
-  document.getElementById('tweetCounter').innerHTML ="Twitter limit: "+string.length+"/267"
+  charCounter()
   
   var url = "https://twitter.com/intent/tweet?button_hashtag=asterisker&ref_src=twsrc%5Etfw&text=" + url_string + "%0A"
   document.getElementById("tweet_btn").href = url
   $('#copy-button').popover(); 
+}
+
+function charCounter(){
+  small = document.getElementById('tweetCounter')
+  counter = document.getElementById('asterisked').value.length
+  small.innerHTML ="Limite do Twitter: "+counter+"/267"
+  if (counter > 267 && !small.classList.contains("text-warning")){
+    small.classList.add("text-warning")
+    small.classList.remove("text-muted")
+  } else if (counter <= 267 && document.getElementById('tweetCounter').classList.contains("text-warning")){
+    small.classList.remove("text-warning")
+    small.classList.add("text-muted")
+  }
 }
 
 function copyText(){
@@ -60,5 +73,5 @@ function copyText(){
 }
 
 window.onload = function() {
-  document.getElementById('tweetCounter').innerHTML ="Twitter limit: "+document.getElementById('asterisked').value.length+"/267"
+  charCounter()
 };
