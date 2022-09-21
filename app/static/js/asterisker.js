@@ -55,7 +55,7 @@ function asterisker(){
 function charCounter(){
   small = document.getElementById('tweetCounter')
   counter = document.getElementById('asterisked').value.length
-  small.innerHTML ="Limite do Twitter: "+counter+"/267"
+  small.innerHTML ="Limite do Twitter: "+counter+"/280"
   if (counter > 280 && !small.classList.contains("text-warning")){
     small.classList.add("text-warning")
     small.classList.remove("text-muted")
